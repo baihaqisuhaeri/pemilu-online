@@ -83,7 +83,7 @@
                                 <div class="flex-1 bg-white"></div>
                             </div>
                             @if ($candidate->photo)
-                                <img src="{{ $candidate->photo }}">
+                                <img src="{{ $candidate->photo }}"
                                     alt="{{ $candidate->name }}"
                                     class="absolute inset-0 w-full h-full object-cover object-top z-10">
                             @else
