@@ -76,7 +76,7 @@
                             </div>
                             <div class="flex items-center justify-start px-3 py-4 w-24 h-24">
                                 @if ($candidate->logo_partai)
-                                    <img src="{{ Storage::url($candidate->logo_partai) }}"
+                                    <img src="{{ ($candidate->logo_partai }}"
                                         alt="{{ $candidate->nama_partai }}"
                                         class="max-h-full max-w-full object-contain">
                                 @else

@@ -103,7 +103,7 @@
                     <!-- Logo -->
                     <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden">
                         @if ($partai->logo_partai)
-                            <img src="{{ Storage::url($partai->logo_partai) }}" class="w-full h-full object-contain p-1">
+                            <img src="{{ $partai->logo_partai }}" class="w-full h-full object-contain p-1">
                         @else
                             <span class="text-2xl">🏛️</span>
                         @endif

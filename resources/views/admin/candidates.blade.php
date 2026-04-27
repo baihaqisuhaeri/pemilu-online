@@ -110,7 +110,7 @@
             <div class="flex items-center gap-4 p-4 border-b hover:bg-gray-50">
                 <div class="w-16 h-16 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
                     @if ($candidate->photo)
-                        <img src="{{ Storage::url($candidate->photo) }}" class="w-full h-full object-cover">
+                        <img src="{{ $candidate->photo }}" class="w-full h-full object-cover">
                     @else
                         <div class="w-full h-full flex items-center justify-center text-xl font-bold text-gray-400">{{ $candidate->nomor_urut }}</div>
                     @endif

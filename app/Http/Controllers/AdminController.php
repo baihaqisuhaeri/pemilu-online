@@ -13,6 +13,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use Cloudinary\Cloudinary;
+use Cloudinary\Configuration\Configuration;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
@@ -71,9 +73,14 @@ class AdminController extends Controller
         $request->validate($rules);
 
         $photoPath = null;
-        if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('candidates', 'public');
-        }
+            if ($request->hasFile('photo')) {
+                $cloudinary = new Cloudinary(env('CLOUDINARY_URL'));
+                $result = $cloudinary->uploadApi()->upload(
+                    $request->file('photo')->getRealPath(),
+                    ['folder' => 'candidates']
+                    );
+                $photoPath = $result['secure_url'];
+                }
 
         Candidate::create([
             'election_type_id' => $request->election_type_id,
@@ -89,9 +96,9 @@ class AdminController extends Controller
 
     public function destroyCandidate(Candidate $candidate)
     {
-        if ($candidate->photo) {
-            Storage::disk('public')->delete($candidate->photo);
-        }
+        // if ($candidate->photo) {
+        //     Storage::disk('public')->delete($candidate->photo);
+        // }
         $candidate->delete();
         return redirect()->route('admin.candidates')->with('success', 'Calon berhasil dihapus!');
     }
@@ -116,9 +123,14 @@ class AdminController extends Controller
         ]);
 
         $logoPath = null;
-        if ($request->hasFile('logo_partai')) {
-            $logoPath = $request->file('logo_partai')->store('partai', 'public');
-        }
+                if ($request->hasFile('logo_partai')) {
+                    $cloudinary = new Cloudinary(env('CLOUDINARY_URL'));
+                    $result = $cloudinary->uploadApi()->upload(
+                        $request->file('logo_partai')->getRealPath(),
+                        ['folder' => 'partai']
+                    );
+                    $logoPath = $result['secure_url'];
+                }
 
         $dprCandidate = DprCandidate::create([
             'nomor_urut'  => $request->nomor_urut,
@@ -141,9 +153,9 @@ class AdminController extends Controller
 
     public function destroyDpr(DprCandidate $dprCandidate)
     {
-        if ($dprCandidate->logo_partai) {
-            Storage::disk('public')->delete($dprCandidate->logo_partai);
-        }
+        // if ($dprCandidate->logo_partai) {
+        //     Storage::disk('public')->delete($dprCandidate->logo_partai);
+        // }
         $dprCandidate->delete();
         return redirect()->route('admin.dpr')->with('success', 'Partai berhasil dihapus!');
     }

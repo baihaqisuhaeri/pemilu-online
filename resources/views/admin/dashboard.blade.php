@@ -77,7 +77,7 @@
                 <div class="bg-gray-50 rounded-xl overflow-hidden">
                     <div class="h-40 bg-gray-200 overflow-hidden">
                         @if ($candidate->photo)
-                            <img src="{{ Storage::url($candidate->photo) }}" class="w-full h-full object-cover object-top">
+                            <img src="{{ $candidate->photo }}" class="w-full h-full object-cover object-top">
                         @else
                             <div class="w-full h-full flex items-center justify-center">
                                 <span class="text-4xl font-black text-gray-400">{{ $candidate->nomor_urut }}</span>
@@ -133,7 +133,7 @@
                     <div class="flex items-center gap-4 p-4 border-b">
                         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 p-1">
                             @if ($partai->logo_partai)
-                                <img src="{{ Storage::url($partai->logo_partai) }}" class="max-h-full max-w-full object-contain">
+                                <img src="{{ $partai->logo_partai }}" class="max-h-full max-w-full object-contain">
                             @else
                                 <span class="text-2xl">🏛️</span>
                             @endif
@@ -196,7 +196,7 @@
                 <div class="bg-gray-50 rounded-xl overflow-hidden">
                     <div class="h-40 bg-gray-200 overflow-hidden">
                         @if ($candidate->photo)
-                            <img src="{{ Storage::url($candidate->photo) }}" class="w-full h-full object-cover object-top">
+                            <img src="{{ $candidate->photo }}" class="w-full h-full object-cover object-top">
                         @else
                             <div class="w-full h-full flex items-center justify-center">
                                 <span class="text-4xl font-black text-gray-400">{{ $candidate->nomor_urut }}</span>
