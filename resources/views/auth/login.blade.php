@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Pemilu Online</title>
+    <title>Login - Pemungutan Suara Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .bg-pattern {
@@ -17,7 +17,7 @@
     <!-- Kiri - Branding -->
     <div class="hidden lg:flex w-1/2 bg-pattern flex-col items-center justify-center p-12 text-white">
         <img src="{{ asset('images/logo.png') }}" alt="Logo" class="w-32 h-32 object-contain mb-8">
-        <h1 class="text-4xl font-black mb-3 text-center">Pemilu Online</h1>
+        <h1 class="text-4xl font-black mb-3 text-center">Pemungutan Suara Online</h1>
         <p class="text-red-200 text-center text-lg leading-relaxed">
             Sistem Pemilihan Umum Digital yang Aman, Transparan, dan Terpercaya
         </p>
@@ -101,7 +101,7 @@
             </div>
 
             <p class="text-center text-xs text-gray-400 mt-6">
-                &copy; {{ date('Y') }} Pemilu Online. All rights reserved.
+                &copy; {{ date('Y') }} Pemungutan Suara Online. All rights reserved.
             </p>
         </div>
     </div>
