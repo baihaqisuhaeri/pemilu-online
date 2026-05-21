@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemilu Online - Pilih DPR</title>
+    <title>Pemungutan Suara Online - Pilih DPR</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .card-dpr { transition: all 0.3s ease; }
@@ -18,7 +18,7 @@
         <div class="flex items-center gap-3">
             <img src="{{ asset('images/logo.png') }}" alt="icon" class="w-16 h-16 object-contain">
             <div>
-                <h1 class="text-lg font-bold leading-tight">Pemilu Online</h1>
+                <h1 class="text-lg font-bold leading-tight">Pemungutan Suara Online</h1>
                 <p class="text-red-200 text-xs">Pemilihan DPR RI</p>
             </div>
         </div>
